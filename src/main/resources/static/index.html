@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Registration Portal</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="page-shell">
+    <section class="hero">
+      <p class="eyebrow">Registration Portal</p>
+      <h1>Simple registration, built properly.</h1>
+      <p class="hero-copy">
+        A full-stack Spring Boot application with validation, persistence, duplicate detection,
+        and a responsive browser interface.
+      </p>
+      <div class="stat-row">
+        <div><strong>Java 17</strong><span>Backend</span></div>
+        <div><strong>Spring Boot</strong><span>REST API</span></div>
+        <div><strong>H2</strong><span>Persistence</span></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="card-heading">
+        <div>
+          <p class="eyebrow">New registration</p>
+          <h2>Create your profile</h2>
+        </div>
+        <span id="statusBadge" class="status-badge">Ready</span>
+      </div>
+
+      <form id="registrationForm" novalidate>
+        <div class="grid two">
+          <label>
+            First name
+            <input id="firstName" name="firstName" autocomplete="given-name" required maxlength="80">
+            <small data-error-for="firstName"></small>
+          </label>
+          <label>
+            Last name
+            <input id="lastName" name="lastName" autocomplete="family-name" required maxlength="80">
+            <small data-error-for="lastName"></small>
+          </label>
+        </div>
+
+        <label>
+          Email
+          <input id="email" name="email" type="email" autocomplete="email" required maxlength="180">
+          <small data-error-for="email"></small>
+        </label>
+
+        <div class="grid two">
+          <label>
+            Phone <span class="muted">(optional)</span>
+            <input id="phone" name="phone" autocomplete="tel" maxlength="30">
+            <small data-error-for="phone"></small>
+          </label>
+          <label>
+            Program
+            <select id="program" name="program" required>
+              <option value="">Choose a program</option>
+              <option>Software Engineering</option>
+              <option>Data & AI</option>
+              <option>Cloud Engineering</option>
+              <option>Cybersecurity</option>
+              <option>Other</option>
+            </select>
+            <small data-error-for="program"></small>
+          </label>
+        </div>
+
+        <div id="message" class="message" role="status" aria-live="polite"></div>
+
+        <button id="submitButton" type="submit">Submit registration</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>
